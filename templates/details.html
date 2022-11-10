@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>{{pet.name}} Info</h1>
+
+<!-- Pet info goes here -->
+<div class="details_grid">
+    <div class="img_div">
+        <img src="{{pet.photo_url}}" alt="">
+    </div>
+
+    <div class="details_div">
+        <p><b>Name:</b> {{pet.name}}</p>
+        <p><b>Species:</b> {{pet.species}}</p>
+        <p><b>Age:</b> {{pet.age}}</p>
+        <P><b>Notes:</b> {{pet.notes}}</P>
+
+        <a href="/pets/{{pet.id}}/edit">Edit</a>
+
+    </div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

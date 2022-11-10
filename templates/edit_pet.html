@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<h1>Edit Pet</h1>
+{% for msg in get_flashed_messages() %}
+<p>{{msg}}</p>
+{% endfor %}
+
+<form method="POST">
+    {{form.hidden_tag()}}
+    {% for field in form if field.widget.input_type != 'hidden' %}
+    <p>
+        {{field.label(class="form-label")}}
+        {{field(class="form-control")}}
+    </p>
+
+
+    {% endfor %}
+    <button class="btn btn-secondary">Save</button>
+
+</form>
+
+
+{% endblock %}

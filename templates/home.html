@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Ready For Adoption</h1>
+<div class="flash-cont">
+    {% for msg in get_flashed_messages() %}
+    <p><b>{{msg}}</b></p>
+    {% endfor %}
+</div>
+<main class="pets-grid">
+
+    {% for pet in pets %}
+    <div class="pet_card">
+
+        <img src="{{pet.photo_url}}" class="img-fluid" alt="...">
+
+        {% if pet.available %}
+        <P>{{pet.name}} is <b> available!</b><a href="/pets/{{pet.id}}/details">Details</a></P>
+
+        {% elif not pet.available %}
+        <P>{{pet.name}} is <b>not available!</b></P>
+
+        {% endif %}
+
+    </div>
+
+    {% endfor %}
+
+</main>
+
+
+
+{% endblock %}
